@@ -9,11 +9,16 @@ import { addOperation, undo, redo, currentState, clear } from "./drawing-state.j
 
 let user={};
 const app=express();
-const port=3000;
+const port = process.env.PORT || 3000;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const clientPath = join(__dirname, "..", "client");
 const server=createServer(app);
-const io=new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 
 app.use(express.static(clientPath));
 
