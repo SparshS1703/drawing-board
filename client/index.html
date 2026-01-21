@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+        <div id="head">
+            <button id="Clear">Clear</button>
+            <button id="Pen">pen</button>
+            <button id="Brush">brush</button>
+            <button id="undo">Undo</button>
+            <button id="redo">Redo</button>
+            <input type="color" id="colorPicker">
+            <button id="Eraser">Eraser</button>
+            <div id="width">
+            <label for="range">Stroke Width:</label>
+            <input type="range" min="1" max="10" id="range">    
+            </div>        
+        </div>
+    <canvas id="cursor"></canvas>
+    <canvas id="canvas"></canvas>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="websocket.js"> </script>
+    <script src="canvas.js"></script>
+    
+</body>
+
+</html>
